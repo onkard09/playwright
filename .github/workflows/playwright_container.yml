@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Container Tests
 on:
   push:
     branches: [ main, master ]
@@ -7,6 +7,8 @@ on:
 jobs:
   playwright:
     name: 'Playwright Tests'
+    env:
+      HOME: /root
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.48.1-jammy
